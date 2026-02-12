@@ -21,7 +21,15 @@ y = spambase.data.targets
 #For "getting started" section of project:
 df = pd.concat([x, y], axis=1)
 
-plt.plot(df["word_freq_telnet"], df["word_freq_mail"])
+#Plot 1
+plt.scatter(df["word_freq_your"], df["word_freq_internet"], c=df["Class"])
+plt.colorbar(ticks=[0, 1]) 
 plt.savefig("data/plot1.png")
+#Plot 2
+plt.scatter(df["word_freq_original"], df["word_freq_re"], c=df["Class"])
+plt.savefig("data/plot2.png")
+#PLot 3:
+plt.scatter(df["word_freq_technology"], df["word_freq_money"], c=df["Class"])
+plt.savefig("data/plot3.png")
 
 
